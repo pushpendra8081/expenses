@@ -36,18 +36,14 @@ A comprehensive Flutter expense tracking application with OCR receipt scanning, 
 - Business
 - Other
 
-## Screenshots
+## Video Demo
 
-*Screenshots will be added here*
 
-## Installation
 
-### Prerequisites
-- Flutter SDK (>=3.0.0)
-- Dart SDK (>=3.0.0)
-- Android Studio / VS Code
-- Android device or emulator (API level 21+)
-- iOS device or simulator (iOS 11.0+)
+https://github.com/user-attachments/assets/3b48a4e3-2f79-40e7-a460-d31450a10ebb
+
+
+
 
 ### State Management
 - **Riverpod**: Used for state management and dependency injection
@@ -55,7 +51,6 @@ A comprehensive Flutter expense tracking application with OCR receipt scanning, 
 
 ### Database
 - **Hive**: Local NoSQL database for fast, efficient data storage
-- **Type Adapters**: Custom serialization for expense objects
 
 ### Services
 - **OCR Service**: Google ML Kit integration for text recognition
