@@ -1,0 +1,151 @@
+Launching lib\main.dart on Redmi 8 in debug mode...
+Running Gradle task 'assembleDebug'...
+lib/src/screens/home_screen.dart:47:24: Error: The argument type 'ExpenseListState' can't be assigned to the parameter type 'AsyncValue<List<Expense>>'.
+ - 'ExpenseListState' is from 'package:expense/src/providers/expense_provider.dart' ('lib/src/providers/expense_provider.dart').
+ - 'AsyncValue' is from 'package:riverpod/src/common.dart' ('/C:/Users/Manish/AppData/Local/Pub/Cache/hosted/pub.dev/riverpod-2.6.1/lib/src/common.dart').
+ - 'List' is from 'dart:core'.
+ - 'Expense' is from 'package:expense/src/models/expense.dart' ('lib/src/models/expense.dart').
+      body: _buildBody(expenseList, expenseStats),
+                       ^
+lib/src/screens/summary_screen.dart:66:25: Error: The method 'when' isn't defined for the class 'ExpenseListState'.
+ - 'ExpenseListState' is from 'package:expense/src/providers/expense_provider.dart' ('lib/src/providers/expense_provider.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'when'.
+      body: expenseList.when(
+                        ^^^^
+lib/src/screens/summary_screen.dart:67:42: Error: The method 'when' isn't defined for the class 'ExpenseStatisticsState'.
+ - 'ExpenseStatisticsState' is from 'package:expense/src/providers/expense_provider.dart' ('lib/src/providers/expense_provider.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'when'.
+        data: (expenses) => expenseStats.when(
+                                         ^^^^
+lib/src/screens/summary_screen.dart:227:43: Error: Member not found: 'ExpenseCategories.getIcon'.
+                        ExpenseCategories.getIcon(expense.category),
+                                          ^^^^^^^
+lib/src/screens/summary_screen.dart:168:30: Error: The getter 'dailyAverage' isn't defined for the class 'ExpenseStatistics'.
+ - 'ExpenseStatistics' is from 'package:expense/src/models/expense_statistics.dart' ('lib/src/models/expense_statistics.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'dailyAverage'.
+                  '\$${stats.dailyAverage.toStringAsFixed(2)}',
+                             ^^^^^^^^^^^^
+lib/src/screens/summary_screen.dart:177:30: Error: The getter 'weeklyTotal' isn't defined for the class 'ExpenseStatistics'.
+ - 'ExpenseStatistics' is from 'package:expense/src/models/expense_statistics.dart' ('lib/src/models/expense_statistics.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'weeklyTotal'.
+                  '\$${stats.weeklyTotal.toStringAsFixed(2)}',
+                             ^^^^^^^^^^^
+lib/src/screens/summary_screen.dart:192:30: Error: The getter 'monthlyTotal' isn't defined for the class 'ExpenseStatistics'.
+ - 'ExpenseStatistics' is from 'package:expense/src/models/expense_statistics.dart' ('lib/src/models/expense_statistics.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'monthlyTotal'.
+                  '\$${stats.monthlyTotal.toStringAsFixed(2)}',
+                             ^^^^^^^^^^^^
+lib/src/screens/summary_screen.dart:335:53: Error: Member not found: 'ExpenseCategories.getIcon'.
+                                  ExpenseCategories.getIcon(entry.key),
+                                                    ^^^^^^^
+lib/src/screens/map_view_screen.dart:31:53: Error: The method 'getCurrentLocation' isn't defined for the class 'LocationService'.
+ - 'LocationService' is from 'package:expense/src/services/location_service.dart' ('lib/src/services/location_service.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'getCurrentLocation'.
+      final locationResult = await _locationService.getCurrentLocation();
+                                                    ^^^^^^^^^^^^^^^^^^
+lib/src/screens/map_view_screen.dart:71:46: Error: Member not found: 'ExpenseCategories.getIcon'.
+                      Icon(ExpenseCategories.getIcon(category), size: 16),
+                                             ^^^^^^^
+lib/src/screens/map_view_screen.dart:59:42: Error: The getter 'value' isn't defined for the class 'ExpenseListState'.
+ - 'ExpenseListState' is from 'package:expense/src/providers/expense_provider.dart' ('lib/src/providers/expense_provider.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'value'.
+              _updateMarkers(expenseList.value ?? []);
+                                         ^^^^^
+lib/src/screens/map_view_screen.dart:98:25: Error: The method 'when' isn't defined for the class 'ExpenseListState'.
+ - 'ExpenseListState' is from 'package:expense/src/providers/expense_provider.dart' ('lib/src/providers/expense_provider.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'when'.
+      body: expenseList.when(
+                        ^^^^
+lib/src/screens/map_view_screen.dart:301:37: Error: Member not found: 'ExpenseCategories.getIcon'.
+                  ExpenseCategories.getIcon(expense.category),
+                                    ^^^^^^^
+lib/src/screens/map_view_screen.dart:458:45: Error: Member not found: 'ExpenseCategories.getIcon'.
+                          ExpenseCategories.getIcon(expense.category),
+                                            ^^^^^^^
+lib/src/services/location_service.dart:105:9: Error: No named parameter with the name 'locationSettings'.
+        locationSettings: _locationSettings,
+        ^^^^^^^^^^^^^^^^
+/C:/Users/Manish/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator-10.1.1/lib/geolocator.dart:99:27: Context: Found this candidate, but the arguments don't match.
+  static Future<Position> getCurrentPosition({
+                          ^^^^^^^^^^^^^^^^^^
+lib/src/services/location_service.dart:257:9: Error: No named parameter with the name 'locationSettings'.
+        locationSettings: lowAccuracySettings,
+        ^^^^^^^^^^^^^^^^
+/C:/Users/Manish/AppData/Local/Pub/Cache/hosted/pub.dev/geolocator-10.1.1/lib/geolocator.dart:99:27: Context: Found this candidate, but the arguments don't match.
+  static Future<Position> getCurrentPosition({
+                          ^^^^^^^^^^^^^^^^^^
+lib/src/screens/receipt_scan_screen.dart:373:37: Error: Member not found: 'ExpenseCategories.getIcon'.
+                  ExpenseCategories.getIcon(suggestion.category),
+                                    ^^^^^^^
+lib/src/screens/receipt_scan_screen.dart:390:41: Error: Member not found: 'ExpenseCategories.getIcon'.
+                      ExpenseCategories.getIcon(_selectedCategory!),
+                                        ^^^^^^^
+lib/src/screens/receipt_scan_screen.dart:420:39: Error: Member not found: 'OCRService.scanReceipt'.
+      final result = await OCRService.scanReceipt();
+                                      ^^^^^^^^^^^
+lib/src/screens/add_edit_expense_screen.dart:122:55: Error: Member not found: 'ExpenseCategories.getIcon'.
+                                    ExpenseCategories.getIcon(category),
+                                                      ^^^^^^^
+lib/src/screens/add_edit_expense_screen.dart:331:26: Error: The getter 'isSuccess' isn't defined for the class 'LocationResult'.
+ - 'LocationResult' is from 'package:expense/src/services/location_service.dart' ('lib/src/services/location_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'isSuccess'.
+      if (locationResult.isSuccess && locationResult.location != null) {
+                         ^^^^^^^^^
+lib/src/screens/add_edit_expense_screen.dart:331:54: Error: The getter 'location' isn't defined for the class 'LocationResult'.
+ - 'LocationResult' is from 'package:expense/src/services/location_service.dart' ('lib/src/services/location_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'location'.
+      if (locationResult.isSuccess && locationResult.location != null) {
+                                                     ^^^^^^^^
+lib/src/screens/add_edit_expense_screen.dart:333:38: Error: The getter 'location' isn't defined for the class 'LocationResult'.
+ - 'LocationResult' is from 'package:expense/src/services/location_service.dart' ('lib/src/services/location_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'location'.
+          _latitude = locationResult.location!.latitude;
+                                     ^^^^^^^^
+lib/src/screens/add_edit_expense_screen.dart:334:39: Error: The getter 'location' isn't defined for the class 'LocationResult'.
+ - 'LocationResult' is from 'package:expense/src/services/location_service.dart' ('lib/src/services/location_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'location'.
+          _longitude = locationResult.location!.longitude;
+                                      ^^^^^^^^
+lib/src/screens/add_edit_expense_screen.dart:340:44: Error: The getter 'error' isn't defined for the class 'LocationResult'.
+ - 'LocationResult' is from 'package:expense/src/services/location_service.dart' ('lib/src/services/location_service.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'error'.
+              content: Text(locationResult.error ?? 'Failed to get location'),
+                                           ^^^^^
+lib/src/screens/add_edit_expense_screen.dart:375:42: Error: Member not found: 'OCRService.scanReceipt'.
+      final ocrResult = await OCRService.scanReceipt();
+                                         ^^^^^^^^^^^
+lib/src/services/ocr_service.dart:282:9: Error: 'ExpenseCategories' is imported from both 'package:expense/src/models/expense.dart' and 'package:expense/src/utils/expense_categories.dart'.
+        ExpenseCategories.getCategoryFromKeywords(
+        ^^^^^^^^^^^^^^^^^
+lib/src/services/ocr_service.dart:292:7: Error: No named parameter with the name 'description'.
+      description: description,
+      ^^^^^^^^^^^
+lib/src/models/expense.dart:37:3: Context: Found this candidate, but the arguments don't match.
+  Expense({
+  ^^^^^^^
+lib/src/widgets/expense_tile.dart:55:35: Error: Member not found: 'ExpenseCategories.getIcon'.
+                ExpenseCategories.getIcon(expense.category),
+                                  ^^^^^^^
+lib/src/widgets/expense_tile.dart:234:31: Error: Member not found: 'ExpenseCategories.getIcon'.
+            ExpenseCategories.getIcon(expense.category),
+                              ^^^^^^^
+lib/src/widgets/expense_tile.dart:382:39: Error: Member not found: 'ExpenseCategories.getIcon'.
+                    ExpenseCategories.getIcon(expense.category),
+                                      ^^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command 'C:\flutter\flutter\bin\flutter.bat'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 14s
+Error: Gradle task assembleDebug failed with exit code 1
