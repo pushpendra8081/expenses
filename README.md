@@ -1,82 +1,147 @@
 
----
+# Expense Tracker App
 
-I want you to generate a complete Flutter project for an Expense Management App with the following specifications:
+A comprehensive Flutter expense tracking application with OCR receipt scanning, AI-powered category suggestions, and detailed expense management features.
 
-**State Management:** Riverpod
-**Database:** Hive
+## Features
 
-**Features:**
+### 📱 Core Functionality
+- **Expense Management**: Add, edit, delete, and view expenses
+- **Receipt Scanning**: OCR-powered receipt scanning using Google ML Kit
+- **Smart Categories**: AI-powered category suggestions based on merchant, amount, and historical data
+- **Data Persistence**: Local storage using Hive database
+- **Location Tracking**: Optional GPS location capture for expenses
+- **Statistics & Analytics**: Detailed expense statistics and insights
 
-1. **Expense Entry Form:** Users can add expenses with amount, category, date, optional notes, and optional merchant.
+### 🤖 AI-Powered Features
+- **OCR Text Recognition**: Automatically extract amount, merchant, date, and notes from receipts
+- **Smart Category Suggestions**: Multiple algorithms for intelligent expense categorization:
+  - Rule-based merchant matching
+  - Historical expense analysis
+  - Amount-based heuristics
+  - Combined confidence scoring
 
-2. **Local Database Integration:**
+### 📊 Expense Categories
+- Food & Dining
+- Transportation
+- Shopping
+- Entertainment
+- Bills & Utilities
+- Healthcare
+- Travel
+- Education
+- Personal Care
+- Home & Garden
+- Gifts & Donations
+- Business
+- Other
 
-* Use Hive to store expenses locally.
-* Support add, edit, delete, and view expenses.
+## Screenshots
 
-3. **OCR Integration:**
+*Screenshots will be added here*
 
-* Integrate Google ML Kit OCR.
-* User can scan a receipt and extract amount, date, and merchant name.
-* The extracted fields should appear in the add-expense form editable by the user before saving.
+## Installation
 
-4. **AI-powered Category Suggestions:**
+### Prerequisites
+- Flutter SDK (>=3.0.0)
+- Dart SDK (>=3.0.0)
+- Android Studio / VS Code
+- Android device or emulator (API level 21+)
+- iOS device or simulator (iOS 11.0+)
 
-* Use a rule-based system: suggest categories based on merchant or notes keywords (e.g., "uber" → "Transport", "amazon" → "Shopping").
+### State Management
+- **Riverpod**: Used for state management and dependency injection
+- **Provider Pattern**: Clean separation of business logic and UI
 
-5. **Location Access:**
+### Database
+- **Hive**: Local NoSQL database for fast, efficient data storage
+- **Type Adapters**: Custom serialization for expense objects
 
-* Capture user location when adding an expense using geolocator.
-* Save coordinates with the expense.
-* Optionally display location on a map using flutter\_map or google\_maps\_flutter.
+### Services
+- **OCR Service**: Google ML Kit integration for text recognition
+- **Suggestion Service**: AI algorithms for category suggestions
+- **Location Service**: GPS integration for expense location tracking
 
-6. **Expense Summary:**
+## Key Components
 
-* Show total expenses by category.
-* Support filtering by date range.
-* Display totals in a list or chart (bar chart or pie chart).
+### Receipt Scan Screen
+The main OCR functionality screen that:
+- Captures receipts via camera or gallery
+- Processes images using Google ML Kit
+- Extracts expense data (amount, merchant, date)
+- Provides AI-powered category suggestions
+- Persists scan results for user review
 
-**UI/UX:**
+### OCR Service
+Handles all optical character recognition tasks:
+- Image preprocessing and optimization
+- Text extraction using ML Kit
+- Pattern matching for amounts, dates, and merchants
+- Error handling and validation
 
-* Simple, clean, and responsive.
-* Editable OCR results before saving.
-* Snackbars/toasts on add, edit, delete.
-* Confirm delete with a dialog.
+### Suggestion Service
+Provides intelligent category suggestions using:
+- **Rule-based matching**: Merchant name and keyword analysis
+- **Historical analysis**: Learning from previous expenses
+- **Amount heuristics**: Category suggestions based on expense amount
+- **Confidence scoring**: Weighted combination of multiple algorithms
 
-**Project Structure Suggestion:**
+## Usage
 
+### Adding Expenses
+1. **Manual Entry**: Use the add expense screen to manually input expense details
+2. **Receipt Scanning**: Use the scan feature to automatically extract expense data from receipts
+3. **Category Selection**: Choose from suggested categories or select manually
+
+### Receipt Scanning Workflow
+1. Navigate to the receipt scan screen
+2. Choose camera or gallery option
+3. Capture or select receipt image
+4. Review extracted data (amount, merchant, date)
+5. Select from AI-suggested categories
+6. Save the expense
+
+### Viewing Expenses
+- Browse all expenses in the main list
+- Filter by category, date range, or search terms
+- View detailed expense information
+- Edit or delete existing expenses
+
+## Dependencies
+
+### Core Dependencies
+```yaml
+flutter:
+  sdk: flutter
+flutter_riverpod: ^2.4.9
+hive: ^2.2.3
+hive_flutter: ^1.1.0
 ```
-lib/
-  main.dart
-  src/
-    models/
-      expense.dart
-    db/
-      hive_service.dart
-    providers/
-      expense_provider.dart
-    screens/
-      home_screen.dart
-      add_edit_expense.dart
-      receipt_scan_screen.dart
-      summary_screen.dart
-      map_view_screen.dart
-    widgets/
-      expense_tile.dart
-      chart_widget.dart
-    services/
-      ocr_service.dart
-      suggestion_service.dart
-      location_service.dart
-    utils/
-      date_utils.dart
-      currency_utils.dart
-assets/
+
+### OCR & Image Processing
+```yaml
+google_mlkit_text_recognition: ^0.10.0
+image_picker: ^1.0.4
 ```
 
-**Other Requirements:**
+### Storage & Persistence
+```yaml
+shared_preferences: ^2.2.2
+path_provider: ^2.1.1
+```
 
-* Use proper Riverpod providers for state management.
-* Hive should store the data efficiently; include a Hive adapter for the Expense model.
-* Ensure proper permissions handling for camera and location.
+### Location Services
+```yaml
+geolocator: ^10.1.0
+permission_handler: ^11.1.0
+```
+
+## Permissions
+
+### Android (android/app/src/main/AndroidManifest.xml)
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```

@@ -542,13 +542,8 @@ class _ReceiptScanScreenState extends ConsumerState<ReceiptScanScreen> {
           ),
         );
         
-        // Navigate to Add/Edit screen for further editing if needed
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => AddEditExpenseScreen(expense: expense),
-          ),
-        );
+        // Navigate back to home screen after saving expense
+        Navigator.pop(context);
       }
     } catch (e) {
       if (mounted) {
